@@ -1,0 +1,36 @@
+Present the game
+Start the game 
+    1. Function for CP choice
+        Define random <- number random between 1 and 100
+        number random between 1 and 100 = ((Math.random() * 100) + 1) 
+        If the number is between 1 and 34
+         random is Rock
+        Else if the number is between 35 and 67
+         random is Paper
+        Else 
+         random is Scissors
+
+    2. Function for U choice
+        Get u_choice
+        u_choice = u_choice.toLowerCase()
+        u_choice = u_choice.charAt(0).toUpperCase() + u_choice.slice(1)
+
+Make comparison of the choices
+    If CP == rock and U == scissors
+        cp wins
+    Else if CP == rock and U == rock
+        draw
+    else if CP == paper and U == rock
+        cp wins
+    else if CP == paper and U == paper
+        draw
+    else if CP == scissors and U == paper
+        cp wins
+    else if CP == scissors and U == scissors
+        draw
+    else u wins
+
+Select the winner
+Show which is the winner
+
+
