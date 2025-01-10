@@ -1,7 +1,8 @@
 console.log("Hello world!")
-humanScore = 0
-computerScore = 0
+let humanScore = 0;
+let computerScore = 0;
 
+// Function get the CP choice
 function getComputerChoice() {
     CP_choice = ((Math.random() * 100) + 1) 
         if (CP_choice >= 1 && CP_choice <= 34) {
@@ -14,6 +15,7 @@ function getComputerChoice() {
 return CP_choice
 }
 
+// Function get user choice
 function getHumanChoice() {
     H_choice = prompt("Select your choice: ")
     H_choice = H_choice.toLowerCase()
@@ -21,25 +23,29 @@ function getHumanChoice() {
 return H_choice
 }
 
+// Function for comparison of the choices
 function playRound(computerChoice, humanChoice) {
     if (computerChoice == humanChoice) {
         console.log("It's a draw!")
     } else if (computerChoice == 'Rock' && humanChoice == 'Scissors'){
+        computerScore += 1
         console.log('You lose! Rock beats Scissors')
-    } else if (computerChoice == 'Scissors' && humanChoice == 'Rock'){
-        console.log('You win! Rock beats Scissors')
     } else if (computerChoice == 'Paper' && humanChoice == 'Rock'){
-        console.log('You lose! Paper beats Rock')
-    } else if (computerChoice == 'Rock' && humanChoice == 'Paper')
-        console.log('You win! Paper beats Rock')
-    
+        console.log('You lose! Paper beats Rock');
+    } else if (computerChoice == 'Scissors' && humanChoice == 'Paper'){
+        console.log('You lose! Scissors beats Paper');
+    } else console.log('You win!');
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
-
+// Function keep track of the scores and declares a winner at the end
 function playGame() {
-    for (var i = 1; i < 8; i++) playRound(i);
+    playRound(humanSelection, computerSelection); // Calls function 
+    for (var i = 1; i < 6; i++) playRound(i); // Iteration
+
+    if (playRound(5)) {
+
+    }
 }
